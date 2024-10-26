@@ -1,12 +1,13 @@
+import 'package:e_commerce_app/features/auth/signup_screen.dart';
 import 'package:e_commerce_app/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,13 +77,24 @@ class SignInScreen extends StatelessWidget {
                   style: const TextStyle(
                     color: TextFiledTextColor,
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                   ),
                   children: [
                     const TextSpan(text: "Don't have an Accout?"),
                     TextSpan(
                       text: 'Create one',
-                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: primaryColor),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                builder: (context) => SignupScreen(),
+                              ));
+                        },
                     ),
                   ],
                 ),
@@ -96,6 +108,21 @@ class SignInScreen extends StatelessWidget {
                     text: 'Continue with Apple',
                     onPressed: () {},
                   ),
+                  const SizedBox(height: 16),
+                  SocialLogInButton(
+                    icon: FontAwesomeIcons.google,
+                    color: const Color(0xFFDB4437),
+                    text: 'Continue with Google',
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: 16),
+                  SocialLogInButton(
+                    icon: FontAwesomeIcons.facebook,
+                    color: const Color(0xFF4267B2),
+                    text: 'Continue with FaceBook',
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: 16),
                 ],
               )
             ],
@@ -128,8 +155,27 @@ class SocialLogInButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: CupertinoButton(
-        child: Text(
-          text,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              color: color,
+              size: 24,
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                text,
+                style: const TextStyle(
+                  color: blackColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w200,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
         ),
         onPressed: () {},
       ),
