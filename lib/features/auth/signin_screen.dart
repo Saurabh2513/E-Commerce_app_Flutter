@@ -2,6 +2,7 @@ import 'package:e_commerce_app/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -88,11 +89,49 @@ class SignInScreen extends StatelessWidget {
               ),
               const SizedBox(height: 50),
               Column(
-                children: [],
+                children: [
+                  SocialLogInButton(
+                    icon: FontAwesomeIcons.apple,
+                    color: blackColor,
+                    text: 'Continue with Apple',
+                    onPressed: () {},
+                  ),
+                ],
               )
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SocialLogInButton extends StatelessWidget {
+  final IconData icon;
+  final Color color;
+  final String text;
+  final VoidCallback onPressed;
+
+  const SocialLogInButton(
+      {super.key,
+      required this.icon,
+      required this.color,
+      required this.text,
+      required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        color: textFiledColor,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: CupertinoButton(
+        child: Text(
+          text,
+        ),
+        onPressed: () {},
       ),
     );
   }
