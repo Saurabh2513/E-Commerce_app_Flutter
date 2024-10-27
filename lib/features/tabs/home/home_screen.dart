@@ -8,18 +8,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: whiteCOlor,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),
           child: Column(
             children: [
-              HeaderRow(),
-              SizedBox(height: 20),
-              SearchBar(),
+              const HeaderRow(),
+              const SizedBox(height: 20),
+              const SearchBar(),
               const SizedBox(height: 24),
-              const Section(
+              Section(
                 titel: 'Categories',
                 seeAll: true,
                 child: CategoriesSection(),
@@ -64,10 +64,43 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              Section(
+              const Section(
                 titel: 'New In',
                 seeAll: true,
-                child: Container(),
+                child: ProductList(
+                  products: [
+                    Product(
+                        imagePath: 'assets/images/products/product_5.png',
+                        title: 'product 1',
+                        price: '\$29.99',
+                        crossPrice: '\$10.00'),
+                    Product(
+                        imagePath: 'assets/images/products/product_3.png',
+                        title: 'product 1',
+                        price: '\$29.99',
+                        crossPrice: '\$20.00'),
+                    Product(
+                        imagePath: 'assets/images/products/product_4.png',
+                        title: 'product 3',
+                        price: '\$29.99',
+                        crossPrice: '\$30.00'),
+                    Product(
+                        imagePath: 'assets/images/products/product_2.png',
+                        title: 'product 4',
+                        price: '\$29.99',
+                        crossPrice: '\$40.00'),
+                    Product(
+                        imagePath: 'assets/images/products/product_6.png',
+                        title: 'product 5',
+                        price: '\$29.99',
+                        crossPrice: '\$50.00'),
+                    Product(
+                        imagePath: 'assets/images/products/product_1.png',
+                        title: 'product 6',
+                        price: '\$29.99',
+                        crossPrice: '\$60.00'),
+                  ],
+                ),
               ),
             ],
           ),
@@ -145,6 +178,7 @@ class Section extends StatelessWidget {
   final String titel;
   final bool seeAll;
   final Widget child;
+
   const Section(
       {super.key,
       required this.titel,
@@ -218,6 +252,7 @@ class CategoriesSection extends StatelessWidget {
 class CategoryItem extends StatelessWidget {
   final String imagePath;
   final String label;
+
   const CategoryItem({super.key, required this.imagePath, required this.label});
 
   @override
@@ -255,6 +290,7 @@ class Product {
   final String title;
   final String price;
   final String crossPrice;
+
   const Product({
     required this.imagePath,
     required this.title,
@@ -265,6 +301,7 @@ class Product {
 
 class ProductList extends StatelessWidget {
   final List<Product> products;
+
   const ProductList({super.key, required this.products});
 
   @override
@@ -292,6 +329,7 @@ class ProductCard extends StatelessWidget {
   final String title;
   final String price;
   final String crossPrice;
+
   const ProductCard(
       {super.key,
       required this.imagePath,
@@ -342,6 +380,31 @@ class ProductCard extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: TextFiledTextColor.withOpacity(0.8),
               ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: Row(
+              children: [
+                Text(
+                  price,
+                  style: const TextStyle(
+                    color: TextFiledTextColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                ),
+                const SizedBox(width: 5),
+                Text(
+                  crossPrice,
+                  style: TextStyle(
+                    color: TextFiledTextColor.withOpacity(0.5),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    decoration: TextDecoration.lineThrough,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
