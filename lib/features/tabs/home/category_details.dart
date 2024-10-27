@@ -21,38 +21,25 @@ class CategoryDetailsItem extends StatelessWidget {
       ),
       body: const SingleChildScrollView(
         padding: EdgeInsets.only(top: 20, right: 5, bottom: 20, left: 20),
-        child: ProductList(products: [
-          Product(
-              imagePath: 'assets/images/products/product_1.png',
-              title: 'product 1',
-              price: '\$29.99',
-              crossPrice: '\$10.00'),
-          Product(
-              imagePath: 'assets/images/products/product_2.png',
-              title: 'product 1',
-              price: '\$29.99',
-              crossPrice: '\$20.00'),
-          Product(
-              imagePath: 'assets/images/products/product_3.png',
-              title: 'product 3',
-              price: '\$29.99',
-              crossPrice: '\$30.00'),
-          Product(
-              imagePath: 'assets/images/products/product_4.png',
-              title: 'product 4',
-              price: '\$29.99',
-              crossPrice: '\$40.00'),
-          Product(
-              imagePath: 'assets/images/products/product_5.png',
-              title: 'product 5',
-              price: '\$29.99',
-              crossPrice: '\$50.00'),
-          Product(
-              imagePath: 'assets/images/products/product_6.png',
-              title: 'product 6',
-              price: '\$29.99',
-              crossPrice: '\$60.00'),
-        ]),
+        child: ProductList(
+          products: [
+            Product(
+                imagePath: 'assets/images/products/product_1.png',
+                title: 'product 1',
+                price: '\$29.99',
+                crossPrice: '\$10.00'),
+            Product(
+                imagePath: 'assets/images/products/product_2.png',
+                title: 'product 1',
+                price: '\$29.99',
+                crossPrice: '\$20.00'),
+            Product(
+                imagePath: 'assets/images/products/product_3.png',
+                title: 'product 3',
+                price: '\$29.99',
+                crossPrice: '\$30.00'),
+          ],
+        ),
       ),
     );
   }
@@ -66,17 +53,15 @@ class ProductsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 40,
-        mainAxisSpacing: 10,
-        childAspectRatio: 7,
-      ),
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 30,
+          childAspectRatio: 0.7),
       itemCount: products.length,
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      scrollDirection: Axis.vertical,
-      itemBuilder: (context, index) {
-        final product = products[index];
+      itemBuilder: (context, indext) {
+        final product = products[indext];
         return ProductCard(
             imagePath: product.imagePath,
             title: product.title,

@@ -21,7 +21,7 @@ class AllCategoryList extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             CategoryItemList(
@@ -31,7 +31,7 @@ class AllCategoryList extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (context) => CategoryDetailsItem(),
+                    builder: (context) => const CategoryDetailsItem(),
                   ),
                 );
               },
@@ -43,7 +43,7 @@ class AllCategoryList extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (context) => CategoryDetailsItem(),
+                    builder: (context) => const CategoryDetailsItem(),
                   ),
                 );
               },
@@ -55,7 +55,7 @@ class AllCategoryList extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (context) => CategoryDetailsItem(),
+                    builder: (context) => const CategoryDetailsItem(),
                   ),
                 );
               },
@@ -67,7 +67,7 @@ class AllCategoryList extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (context) => CategoryDetailsItem(),
+                    builder: (context) => const CategoryDetailsItem(),
                   ),
                 );
               },
@@ -79,7 +79,7 @@ class AllCategoryList extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (context) => CategoryDetailsItem(),
+                    builder: (context) => const CategoryDetailsItem(),
                   ),
                 );
               },
@@ -104,8 +104,8 @@ class CategoryItemList extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.symmetric(vertical: 10),
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        margin: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         decoration: BoxDecoration(
           color: textFiledColor,
           borderRadius: BorderRadius.circular(10.0),
@@ -123,7 +123,7 @@ class CategoryItemList extends StatelessWidget {
             const SizedBox(width: 12),
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 color: TextFiledTextColor,
                 fontSize: 16,
                 fontWeight: FontWeight.w600,

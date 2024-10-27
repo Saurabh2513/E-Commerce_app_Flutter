@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: whiteCOlor,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               const HeaderRow(),
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
               Section(
                 titel: 'Categories',
                 seeAll: true,
-                child: CategoriesSection(),
+                child: const CategoriesSection(),
                 onSeeAllPressed: () {
                   Navigator.push(
                     context,
@@ -166,7 +166,7 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoTextField(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       placeholder: 'Search...',
       placeholderStyle: TextStyle(color: TextFiledTextColor.withOpacity(0.5)),
       prefix: const Padding(
@@ -353,8 +353,8 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 150,
-      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-      margin: EdgeInsets.only(right: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      margin: const EdgeInsets.only(right: 20),
       decoration: BoxDecoration(
         color: textFiledColor,
         borderRadius: BorderRadius.circular(10),
@@ -376,7 +376,7 @@ class ProductCard extends StatelessWidget {
                 top: 0,
                 right: 0,
                 child: IconButton(
-                  icon: Icon(Iconsax.heart_copy),
+                  icon: const Icon(Iconsax.heart_copy),
                   onPressed: () {},
                 ),
               ),
@@ -384,7 +384,7 @@ class ProductCard extends StatelessWidget {
           ),
           const SizedBox(height: 5),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Text(
               title,
               style: TextStyle(
@@ -395,7 +395,7 @@ class ProductCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Row(
               children: [
                 Text(
