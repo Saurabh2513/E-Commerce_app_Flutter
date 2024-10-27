@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/tabs/home/all_category_list.dart';
 import 'package:e_commerce_app/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       backgroundColor: whiteCOlor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -23,6 +24,13 @@ class HomeScreen extends StatelessWidget {
                 titel: 'Categories',
                 seeAll: true,
                 child: CategoriesSection(),
+                onSeeAllPressed: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const AllCategoryList(),
+                    )); 
+                },
               ),
               const SizedBox(height: 24),
               const Section(
@@ -178,12 +186,13 @@ class Section extends StatelessWidget {
   final String titel;
   final bool seeAll;
   final Widget child;
-
+  final VoidCallback? onSeeAllPressed;
   const Section(
       {super.key,
       required this.titel,
       required this.seeAll,
-      required this.child});
+      required this.child,
+      this.onSeeAllPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -195,17 +204,20 @@ class Section extends StatelessWidget {
           children: [
             Text(
               titel,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
             if (seeAll)
-              Text(
-                'See All',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
+               GestureDetector(
+                onTap: onSeeAllPressed,
+                child: const Text(
+                  'See All',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               )
           ],
