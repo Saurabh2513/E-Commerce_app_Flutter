@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/features/tabs/home/all_category_list.dart';
+import 'package:e_commerce_app/features/tabs/home/category_details.dart';
 import 'package:e_commerce_app/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: whiteCOlor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -23,13 +24,13 @@ class HomeScreen extends StatelessWidget {
               Section(
                 titel: 'Categories',
                 seeAll: true,
-                child: const CategoriesSection(),
+                child: CategoriesSection(),
                 onSeeAllPressed: () {
                   Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                      builder: (context) => const AllCategoryList(),
-                    )); 
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => const AllCategoryList(),
+                      ));
                 },
               ),
               const SizedBox(height: 24),
@@ -210,7 +211,7 @@ class Section extends StatelessWidget {
               ),
             ),
             if (seeAll)
-               GestureDetector(
+              GestureDetector(
                 onTap: onSeeAllPressed,
                 child: const Text(
                   'See All',
@@ -239,22 +240,71 @@ class CategoriesSection extends StatelessWidget {
       height: 100,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: const [
+        children: [
           CategoryItem(
-              imagePath: 'assets/images/categories/cate_1.png',
-              label: 'categorie 1'),
+            imagePath: 'assets/images/categories/cate_1.png',
+            label: 'categorie 1',
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const CategoryDetailsItem(),
+                ),
+              );
+            },
+          ),
           CategoryItem(
               imagePath: 'assets/images/categories/cate_2.png',
-              label: 'categorie 2'),
+              label: 'categorie 2'
+              ,
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const CategoryDetailsItem(),
+                ),
+              );
+            },
+              ),
           CategoryItem(
               imagePath: 'assets/images/categories/cate_3.png',
-              label: 'categorie 3'),
+              label: 'categorie 3'
+              ,
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const CategoryDetailsItem(),
+                ),
+              );
+            },
+              ),
           CategoryItem(
               imagePath: 'assets/images/categories/cate_4.png',
-              label: 'categorie 4'),
+              label: 'categorie 4'
+              ,
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const CategoryDetailsItem(),
+                ),
+              );
+            },
+              ),
           CategoryItem(
               imagePath: 'assets/images/categories/cate_5.png',
-              label: 'categorie 5'),
+              label: 'categorie 5'
+              ,
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const CategoryDetailsItem(),
+                ),
+              );
+            },
+              ),
         ],
       ),
     );
@@ -264,33 +314,40 @@ class CategoriesSection extends StatelessWidget {
 class CategoryItem extends StatelessWidget {
   final String imagePath;
   final String label;
-
-  const CategoryItem({super.key, required this.imagePath, required this.label});
+  final VoidCallback onTap;
+  const CategoryItem(
+      {super.key,
+      required this.imagePath,
+      required this.label,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 80,
-      margin: const EdgeInsets.only(right: 10),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              imagePath,
-              height: 60,
-              fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 80,
+        margin: const EdgeInsets.only(right: 10),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                imagePath,
+                height: 60,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            label,
-            style: const TextStyle(
-              fontSize: 14,
+            const SizedBox(height: 5),
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 14,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

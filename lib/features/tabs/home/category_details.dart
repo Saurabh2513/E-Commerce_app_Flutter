@@ -58,7 +58,7 @@ class ProductsList extends StatelessWidget {
           mainAxisSpacing: 30,
           childAspectRatio: 0.7),
       itemCount: products.length,
-      physics: const NeverScrollableScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemBuilder: (context, indext) {
         final product = products[indext];
