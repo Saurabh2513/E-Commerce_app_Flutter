@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/features/tabs/home/all_category_list.dart';
 import 'package:e_commerce_app/features/tabs/home/category_details.dart';
+import 'package:e_commerce_app/features/tabs/home/product_screen.dart';
 import 'package:e_commerce_app/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -254,9 +255,8 @@ class CategoriesSection extends StatelessWidget {
             },
           ),
           CategoryItem(
-              imagePath: 'assets/images/categories/cate_2.png',
-              label: 'categorie 2'
-              ,
+            imagePath: 'assets/images/categories/cate_2.png',
+            label: 'categorie 2',
             onTap: () {
               Navigator.push(
                 context,
@@ -265,11 +265,10 @@ class CategoriesSection extends StatelessWidget {
                 ),
               );
             },
-              ),
+          ),
           CategoryItem(
-              imagePath: 'assets/images/categories/cate_3.png',
-              label: 'categorie 3'
-              ,
+            imagePath: 'assets/images/categories/cate_3.png',
+            label: 'categorie 3',
             onTap: () {
               Navigator.push(
                 context,
@@ -278,11 +277,10 @@ class CategoriesSection extends StatelessWidget {
                 ),
               );
             },
-              ),
+          ),
           CategoryItem(
-              imagePath: 'assets/images/categories/cate_4.png',
-              label: 'categorie 4'
-              ,
+            imagePath: 'assets/images/categories/cate_4.png',
+            label: 'categorie 4',
             onTap: () {
               Navigator.push(
                 context,
@@ -291,11 +289,10 @@ class CategoriesSection extends StatelessWidget {
                 ),
               );
             },
-              ),
+          ),
           CategoryItem(
-              imagePath: 'assets/images/categories/cate_5.png',
-              label: 'categorie 5'
-              ,
+            imagePath: 'assets/images/categories/cate_5.png',
+            label: 'categorie 5',
             onTap: () {
               Navigator.push(
                 context,
@@ -304,7 +301,7 @@ class CategoriesSection extends StatelessWidget {
                 ),
               );
             },
-              ),
+          ),
         ],
       ),
     );
@@ -383,10 +380,17 @@ class ProductList extends StatelessWidget {
         itemBuilder: (context, index) {
           final product = products[index];
           return ProductCard(
-              imagePath: product.imagePath,
-              title: product.title,
-              price: product.price,
-              crossPrice: product.crossPrice);
+            imagePath: product.imagePath,
+            title: product.title,
+            price: product.price,
+            crossPrice: product.crossPrice,
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => ProductScreen()),
+              );
+            },
+          );
         },
       ),
     );
@@ -398,85 +402,89 @@ class ProductCard extends StatelessWidget {
   final String title;
   final String price;
   final String crossPrice;
-
+  final VoidCallback? onTap;
   const ProductCard(
       {super.key,
       required this.imagePath,
       required this.title,
       required this.price,
-      required this.crossPrice});
+      required this.crossPrice,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 150,
-      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-      margin: const EdgeInsets.only(right: 20),
-      decoration: BoxDecoration(
-        color: textFiledColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset(
-                  imagePath,
-                  height: 200,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned(
-                top: 0,
-                right: 0,
-                child: IconButton(
-                  icon: const Icon(Iconsax.heart_copy),
-                  onPressed: () {},
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: TextFiledTextColor.withOpacity(0.8),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Row(
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 150,
+        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+        margin: const EdgeInsets.only(right: 20),
+        decoration: BoxDecoration(
+          color: textFiledColor,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
               children: [
-                Text(
-                  price,
-                  style: const TextStyle(
-                    color: TextFiledTextColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    imagePath,
+                    height: 200,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                const SizedBox(width: 5),
-                Text(
-                  crossPrice,
-                  style: TextStyle(
-                    color: TextFiledTextColor.withOpacity(0.5),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                    decoration: TextDecoration.lineThrough,
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: IconButton(
+                    icon: const Icon(Iconsax.heart_copy),
+                    onPressed: () {},
                   ),
                 ),
               ],
             ),
-          ),
-        ],
+            const SizedBox(height: 5),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: TextFiledTextColor.withOpacity(0.8),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Row(
+                children: [
+                  Text(
+                    price,
+                    style: const TextStyle(
+                      color: TextFiledTextColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                  Text(
+                    crossPrice,
+                    style: TextStyle(
+                      color: TextFiledTextColor.withOpacity(0.5),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      decoration: TextDecoration.lineThrough,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

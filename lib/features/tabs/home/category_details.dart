@@ -66,7 +66,7 @@ class ProductsList extends StatelessWidget {
             imagePath: product.imagePath,
             title: product.title,
             price: product.price,
-            crossPrice: product.crossPrice);
+            crossPrice: product.crossPrice, onTap: () {  },);
       },
     );
   }
