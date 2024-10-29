@@ -10,13 +10,16 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteCOlor,
       appBar: AppBar(
-        title: const Text(
-          'Product Screen',
-          style: TextStyle(
-            fontWeight: FontWeight.w400,
-            color: TextFiledTextColor,
+       actions: [
+        Container(
+          decoration: BoxDecoration(
+            color: textFiledColor,
+            borderRadius: BorderRadius.circular(50),
+
           ),
-        ),
+          padding: EdgeInsets.only(right: 20),
+        )
+       ],
       ),
     );
   }

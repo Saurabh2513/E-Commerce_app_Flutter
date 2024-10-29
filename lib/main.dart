@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/tabs/home/product_screen.dart';
 import 'package:e_commerce_app/features/tabs/profile/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Flutter Demo",
-      home: BottomNavbar(),
+      home: ProductScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
