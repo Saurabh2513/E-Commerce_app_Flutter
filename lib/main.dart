@@ -1,7 +1,4 @@
-import 'package:e_commerce_app/features/auth/signin_screen.dart';
-import 'package:e_commerce_app/features/auth/signup_screen.dart';
 import 'package:e_commerce_app/features/tabs/home/splash_screen.dart';
-import 'package:e_commerce_app/features/tabs/profile/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Flutter Demo",
-      home:SplashScreen(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
