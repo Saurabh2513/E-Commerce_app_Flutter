@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/features/auth/signin_screen.dart';
+import 'package:e_commerce_app/features/tabs/home/home_screen.dart';
 import 'package:e_commerce_app/features/tabs/home/splash_screen.dart';
 import 'package:flutter/material.dart';
 
