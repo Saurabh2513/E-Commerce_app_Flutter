@@ -25,13 +25,14 @@ class HomeScreen extends StatelessWidget {
               Section(
                 titel: 'Categories',
                 seeAll: true,
-                child: CategoriesSection(),
+                child: const CategoriesSection(),
                 onSeeAllPressed: () {
                   Navigator.push(
-                      context,
-                      CupertinoPageRoute(
-                        builder: (context) => const AllCategoryList(),
-                      ));
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const AllCategoryList(),
+                    ),
+                  );
                 },
               ),
               const SizedBox(height: 24),
@@ -145,17 +146,18 @@ class HeaderRow extends StatelessWidget {
           hint: const Text('services'),
         ),
         Container(
-            decoration: BoxDecoration(
-              color: primaryColor,
-              borderRadius: BorderRadius.circular(50),
+          decoration: BoxDecoration(
+            color: primaryColor,
+            borderRadius: BorderRadius.circular(50),
+          ),
+          child: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Iconsax.bag_2_copy,
+              color: whiteCOlor,
             ),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Iconsax.bag_2_copy,
-                color: whiteCOlor,
-              ),
-            )),
+          ),
+        ),
       ],
     );
   }
@@ -189,6 +191,7 @@ class Section extends StatelessWidget {
   final bool seeAll;
   final Widget child;
   final VoidCallback? onSeeAllPressed;
+
   const Section(
       {super.key,
       required this.titel,
@@ -221,7 +224,7 @@ class Section extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
+              ),
           ],
         ),
         const SizedBox(height: 10),
@@ -312,6 +315,7 @@ class CategoryItem extends StatelessWidget {
   final String imagePath;
   final String label;
   final VoidCallback onTap;
+
   const CategoryItem(
       {super.key,
       required this.imagePath,
@@ -387,7 +391,7 @@ class ProductList extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                CupertinoPageRoute(builder: (context) => ProductScreen()),
+                CupertinoPageRoute(builder: (context) => const ProductScreen()),
               );
             },
           );
@@ -403,6 +407,7 @@ class ProductCard extends StatelessWidget {
   final String price;
   final String crossPrice;
   final VoidCallback? onTap;
+
   const ProductCard(
       {super.key,
       required this.imagePath,

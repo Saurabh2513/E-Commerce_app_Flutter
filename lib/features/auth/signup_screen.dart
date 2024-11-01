@@ -14,7 +14,7 @@ class SignupScreen extends StatelessWidget {
       backgroundColor: whiteCOlor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,7 +116,7 @@ class SignupScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               CupertinoPageRoute(
-                                builder: (context) => SignInScreen(),
+                                builder: (context) => const SignInScreen(),
                               ));
                         },
                     ),

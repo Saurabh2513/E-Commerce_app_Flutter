@@ -3,8 +3,6 @@ import 'package:e_commerce_app/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-import '../home/profile_screen.dart';
-
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
 
@@ -15,12 +13,12 @@ class BottomNavbar extends StatefulWidget {
 class _BottomNavbarState extends State<BottomNavbar> {
   int _selectedIndex = 0;
   final List<Widget> _screens = [
-    // const HomeScreen(),
-    // const Placeholder(),
-    // Container(),
-    // const Placeholder(),
-    // Container(),
-    const ProfileScreen(),
+    const HomeScreen(),
+    const Placeholder(),
+    Container(),
+    const Placeholder(),
+    Container(),
+
   ];
 
   void _onItemTapped(int index) {
@@ -65,8 +63,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white,
-        backgroundColor: bg,
+        selectedItemColor: primaryColor,
+        backgroundColor: whiteCOlor,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
       ),
