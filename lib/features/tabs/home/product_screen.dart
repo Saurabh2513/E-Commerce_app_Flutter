@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/utils/constant.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
@@ -59,21 +60,19 @@ class ProductScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  const Text(
-                      'size',
+                    const Text(
+                      'Size',
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     GestureDetector(
-                      onTap: (){
-
-                      },
+                      onTap: () {},
                       child: const Row(
-                        children:  [
-                        Text(
-                            'L',
+                        children: [
+                          Text(
+                            'S',
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w500,
@@ -81,6 +80,85 @@ class ProductScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 20),
                           Icon(Iconsax.arrow_down_1_copy)
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                decoration: BoxDecoration(
+                  color: textFiledColor,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Color',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 20,
+                            height: 20,
+                            decoration: const BoxDecoration(
+                              color: Colors.green,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          const Icon(Iconsax.arrow_down_1_copy)
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                decoration: BoxDecoration(
+                  color: textFiledColor,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Quantity',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Row(
+                        children: [
+                          Container(
+                            padding:
+                            const EdgeInsets.all(5),
+                            decoration: const BoxDecoration(
+                              color: primaryColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(CupertinoIcons.minus,
+                            color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          const Icon(Iconsax.arrow_down_1_copy)
                         ],
                       ),
                     ),
