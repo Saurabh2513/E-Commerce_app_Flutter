@@ -261,6 +261,28 @@ class ReviewsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        Row(
+          children: [
+            Row(
+              children: [
+                Image.asset('assets/images/profile.png'
+                ),
+                const SizedBox(width: 20),
+                const Text('Sagar Yadav',
+                  style: TextStyle(
+                    color: TextFiledTextColor,
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(width: 40),
+
+              ],
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
