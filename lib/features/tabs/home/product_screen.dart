@@ -185,6 +185,15 @@ class ProductScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 30),
+              const Text(
+                'data',
+                style: TextStyle(
+                  color: TextFiledTextColor,
+                ),
+              ),
+              const SizedBox(height: 30),
+
             ],
           ),
         ),
