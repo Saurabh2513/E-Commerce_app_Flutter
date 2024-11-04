@@ -147,18 +147,38 @@ class ProductScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            padding:
-                            const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             decoration: const BoxDecoration(
                               color: primaryColor,
                               shape: BoxShape.circle,
                             ),
-                            child: const Icon(CupertinoIcons.minus,
-                            color: Colors.white,
+                            child: const Icon(
+                              CupertinoIcons.minus,
+                              color: Colors.white,
+                              size: 18,
                             ),
                           ),
                           const SizedBox(width: 20),
-                          const Icon(Iconsax.arrow_down_1_copy)
+                          const Text(
+                            '1',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            decoration: const BoxDecoration(
+                              color: primaryColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(
+                              CupertinoIcons.plus,
+                              color: Colors.white,
+                              size: 18,
+                            ),
+                          ),
                         ],
                       ),
                     ),
