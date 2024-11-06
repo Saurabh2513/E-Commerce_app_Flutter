@@ -219,11 +219,11 @@ class ProductScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                const Text(
-                  '216 Reviews'
-                ),
-                const SizedBox(height: 10),
+                const Text('216 Reviews'),
+                const SizedBox(height: 20),
                 const ReviewsSection(),
+                const SizedBox(height: 50),
+
               ],
             ),
           ),
@@ -255,7 +255,8 @@ class ProductSlide extends StatelessWidget {
     );
   }
 }
-// reviews section 
+
+// reviews section
 class ReviewsSection extends StatelessWidget {
   const ReviewsSection({super.key});
 
@@ -267,17 +268,16 @@ class ReviewsSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Image.asset('assets/images/profile.png'
-                ),
+                Image.asset('assets/images/profile.png'),
                 const SizedBox(width: 20),
-                const Text('Sagar Yadav',
+                const Text(
+                  'Sagar Yadav',
                   style: TextStyle(
                     color: TextFiledTextColor,
-                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 const SizedBox(width: 40),
-
               ],
             ),
           ],
