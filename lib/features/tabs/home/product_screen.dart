@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating/flutter_rating.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -265,6 +266,7 @@ class ReviewsSection extends StatelessWidget {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
@@ -282,6 +284,11 @@ class ReviewsSection extends StatelessWidget {
             ),
           ],
         ),
+        StarRating(
+          allowHalfRating: false,
+          rating: 3,
+          color: primaryColor,
+        )
       ],
     );
   }
