@@ -231,6 +231,42 @@ class ProductScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.transparent,
+        child: Padding(
+          padding: const EdgeInsets.all(1),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(
+              color: primaryColor,
+              borderRadius: BorderRadius.circular(50),
+            ),
+            child: CupertinoButton(
+              padding: EdgeInsets.zero,
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '\$148',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Add To Bag',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              onPressed: () {},
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -300,10 +336,7 @@ class ReviewsSection extends StatelessWidget {
         ),
         const Text(
           "10 days ago",
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w500
-          ),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
         ),
       ],
     );
