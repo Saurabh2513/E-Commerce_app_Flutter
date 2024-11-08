@@ -224,7 +224,8 @@ class ProductScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 const ReviewsSection(),
                 const SizedBox(height: 50),
-
+                const ReviewsSection(),
+                const SizedBox(height: 50),
               ],
             ),
           ),
@@ -264,6 +265,7 @@ class ReviewsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -282,13 +284,27 @@ class ReviewsSection extends StatelessWidget {
                 const SizedBox(width: 40),
               ],
             ),
+            StarRating(
+              allowHalfRating: false,
+              rating: 3,
+              color: primaryColor,
+            )
           ],
         ),
-        StarRating(
-          allowHalfRating: false,
-          rating: 3,
-          color: primaryColor,
-        )
+        const SizedBox(height: 10),
+        const Text(
+          "I recently dined at [RestaurantName] and was thoroughly impressed by both the exquisite cuisine and the impeccable service. The menu showcased a variety of innovative dishes, blending bold flavors and beautiful presentation.",
+          style: TextStyle(
+            color: TextFiledTextColor,
+          ),
+        ),
+        const Text(
+          "10 days ago",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w500
+          ),
+        ),
       ],
     );
   }
