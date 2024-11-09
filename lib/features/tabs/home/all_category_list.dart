@@ -60,6 +60,18 @@ class AllCategoryList extends StatelessWidget {
                 );
               },
             ),
+            CategoryItemList(
+              imagePath: 'assets/images/categories/cate_3.png',
+              label: 'Shoes',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) => const CategoryDetailsItem(),
+                  ),
+                );
+              },
+            ),
               CategoryItemList(
               imagePath: 'assets/images/categories/cate_4.png',
               label: 'Bag',

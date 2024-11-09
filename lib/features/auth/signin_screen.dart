@@ -64,7 +64,7 @@ class SignInScreen extends StatelessWidget {
                     style: TextStyle(
                       color: whiteCOlor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 20,
                     ),
                   ),
                   onPressed: () {},

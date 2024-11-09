@@ -210,7 +210,7 @@ class ProductScreen extends StatelessWidget {
                     color: TextFiledTextColor,
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
                 const Text(
                   '4.5 Rating',
                   style: TextStyle(
@@ -234,7 +234,7 @@ class ProductScreen extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         child: Padding(
-          padding: const EdgeInsets.all(1),
+          padding: const EdgeInsets.all(2),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
